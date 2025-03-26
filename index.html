@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$FOMO - Fear of Missing Out</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #1a1a1a;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: #000;
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff4444;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ff4444;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(45deg, #ff4444, #1a1a1a);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #ff4444;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Falling Coins Animation */
+        .coin {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, #ffd700, #b8860b);
+            border-radius: 50%;
+            animation: fall linear infinite;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0.5;
+            }
+        }
+
+        .hero::before, .hero::after, .coin:nth-child(3), .coin:nth-child(4), .coin:nth-child(5) {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, #ffd700, #b8860b);
+            border-radius: 50%;
+            animation: fall linear infinite;
+        }
+
+        .hero::before { left: 10%; animation-duration: 5s; }
+        .hero::after { left: 30%; animation-duration: 6s; animation-delay: 1s; }
+        .coin:nth-child(3) { left: 50%; animation-duration: 4s; animation-delay: 2s; }
+        .coin:nth-child(4) { left: 70%; animation-duration: 5.5s; animation-delay: 0.5s; }
+        .coin:nth-child(5) { left: 90%; animation-duration: 4.5s; animation-delay: 1.5s; }
+
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            color: #ff4444;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .about-content, .tokenomics-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .tokenomics-content div {
+            background: #2a2a2a;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        footer {
+            background: #000;
+            padding: 2rem;
+            text-align: center;
+            color: #888;
+        }
+
+        @media (max-width: 768px) {
+            .about-content, .tokenomics-content {
+                grid-template-columns: 1fr;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .hero-content p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">$FOMO</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#tokenomics">Tokenomics</a>
+                <a href="https://axiom.trade/@tommyboy">Buy $FOMO</a>
+                <a href="#">Whitepaper</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Fear of Missing Out</h1>
+            <p>Join the $FOMO revolution - the memecoin that captures the thrill of never missing out!</p>
+            <a href="https://axiom.trade/@tommyboy" class="btn">Get $FOMO Now</a>
+        </div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+    </div>
+
+    <section id="about">
+        <h2>About $FOMO</h2>
+        <div class="about-content">
+            <div>
+                <p>$FOMO is more than just a memecoin - it's a movement. Born from the chaos of the crypto world, $FOMO embodies the excitement and urgency of being part of something big.</p>
+            </div>
+            <div>
+                <p>With a passionate community and a vision to keep the hype alive, $FOMO is your ticket to ride the wave of the next big thing. Don’t miss out!</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="tokenomics">
+        <h2>Tokenomics</h2>
+        <div class="tokenomics-content">
+            <div>
+                <h3>Total Supply</h3>
+                <p>1,000,000,000 $FOMO</p>
+            </div>
+            <div>
+                <h3>Initial Distribution</h3>
+                <p>50% Community, 30% Liquidity, 20% Team & Development</p>
+            </div>
+            <div>
+                <h3>Burn Mechanism</h3>
+                <p>1% of every transaction burned to increase scarcity</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 $FOMO - Fear of Missing Out. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
